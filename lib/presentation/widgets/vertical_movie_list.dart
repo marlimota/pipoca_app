@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pipoca_app/domain/entities/movie_entity.dart';
+import 'package:pipoca_app/presentation/widgets/movie_card.dart';
 
 class VerticalMovieList extends StatelessWidget {
   final List<MovieEntity> movieList;
@@ -11,13 +12,10 @@ class VerticalMovieList extends StatelessWidget {
       child: GridView.count(
         crossAxisCount: 2,
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.symmetric(horizontal: 12),
-        children: [
-          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
-        ],
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        mainAxisSpacing: 16,
+        crossAxisSpacing: 16,
+        children: [MovieCard()],
       ),
     );
   }

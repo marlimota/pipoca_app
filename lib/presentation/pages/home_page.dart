@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
         children: [
           PageTitle(title: 'Tendências'),
           HorizontalMovieList(movieList: []),
-
           PageTitle(title: 'Populares'),
           VerticalMovieList(movieList: []),
         ],

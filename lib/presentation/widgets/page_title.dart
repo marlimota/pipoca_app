@@ -12,7 +12,7 @@ class PageTitle extends StatelessWidget {
         title,
         style: TextStyle(
           color: const Color.fromARGB(232, 255, 255, 255),
-          fontSize: 24,
+          fontSize: 22,
           fontFamily: 'Nexa',
           letterSpacing: 1.5,
         ),
