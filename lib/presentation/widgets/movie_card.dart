@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pipoca_app/domain/entities/movie_entity.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({super.key});
+  const MovieCard({super.key, required this.movie});
+
+  final MovieEntity movie;
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +12,7 @@ class MovieCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.amber[400],
         image: DecorationImage(
-          image: NetworkImage(''),
+          image: NetworkImage(movie.posterPath),
           fit: BoxFit.fitWidth,
           alignment: Alignment.topCenter,
         ),
@@ -24,7 +27,7 @@ class MovieCard extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Text(
-          'Filme',
+          movie.title,
           style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,

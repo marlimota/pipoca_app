@@ -11,7 +11,7 @@ class MovieDatasourceImpl implements MovieDatasource {
   final Dio dio;
   List<MovieModel> movies = [];
 
-  MovieDatasourceImpl(this.dio);
+  MovieDatasourceImpl({required this.dio});
 
   @override
   Future<List<MovieModel>> getPopularMovies() async {

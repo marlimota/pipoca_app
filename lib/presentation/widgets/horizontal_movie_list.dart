@@ -3,8 +3,8 @@ import 'package:pipoca_app/domain/entities/movie_entity.dart';
 import 'package:pipoca_app/presentation/widgets/movie_card.dart';
 
 class HorizontalMovieList extends StatelessWidget {
-  final List<MovieEntity> movieList;
-  const HorizontalMovieList({super.key, required this.movieList});
+  //final List<MovieEntity> movieList;
+  const HorizontalMovieList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,15 @@ class HorizontalMovieList extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        children: [MovieCard()],
+        children:
+        //movieList.map((e) => MovieCard(movie: e)).toList(),
+        [
+          Container(color: Colors.amber),
+          Container(color: Colors.amber),
+          Container(color: Colors.amber),
+          Container(color: Colors.amber),
+          Container(color: Colors.amber),
+        ],
       ),
     );
   }

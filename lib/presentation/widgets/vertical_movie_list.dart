@@ -15,7 +15,7 @@ class VerticalMovieList extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        children: [MovieCard()],
+        children: movieList.map((e) => MovieCard(movie: e)).toList(),
       ),
     );
   }

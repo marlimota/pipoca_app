@@ -14,7 +14,7 @@ class MovieModel extends MovieEntity {
   factory MovieModel.fromJson(Map<String, dynamic> json) {
     return MovieModel(
       title: json['title'],
-      posterPath: json['poster_path'],
+      posterPath: 'https://image.tmdb.org/t/p/w500' + json['poster_path'],
       backdropPath: json['backdrop_path'],
       overview: json['overview'],
       releaseDate: json['release_date'],

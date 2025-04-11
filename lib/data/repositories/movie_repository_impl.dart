@@ -8,7 +8,7 @@ import 'package:pipoca_app/domain/repositories/movie_repository.dart';
 class MovieRepositoryImpl implements MovieRepository {
   final MovieDatasource movieDatasource;
 
-  MovieRepositoryImpl(this.movieDatasource);
+  MovieRepositoryImpl({required this.movieDatasource});
 
   @override
   Future<Either<Failure, List<MovieEntity>>> getPopularMovies() async {
