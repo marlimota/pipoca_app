@@ -6,6 +6,17 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: TextStyle(color: Colors.white, fontSize: 21));
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: const Color.fromARGB(232, 255, 255, 255),
+          fontSize: 24,
+          fontFamily: 'Nexa',
+          letterSpacing: 1.5,
+        ),
+      ),
+    );
   }
 }

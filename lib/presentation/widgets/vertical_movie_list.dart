@@ -11,12 +11,12 @@ class VerticalMovieList extends StatelessWidget {
       child: GridView.count(
         crossAxisCount: 2,
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 12),
         children: [
-          Container(margin: EdgeInsets.all(12), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(12), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(12), color: Colors.amber[400]),
-          Container(margin: EdgeInsets.all(12), color: Colors.amber[400]),
+          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
+          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
+          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
+          Container(margin: EdgeInsets.all(8), color: Colors.amber[400]),
         ],
       ),
     );
