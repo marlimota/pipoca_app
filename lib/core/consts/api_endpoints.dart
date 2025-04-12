@@ -1,6 +1,6 @@
 class ApiConsts {
-  static String topRatedMoviesUrl =
-      'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+  static String upComingMoviesUrl =
+      'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
   static String popularMoviesUrl =
       'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
   static String prefixToken = 'Bearer';

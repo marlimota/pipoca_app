@@ -36,7 +36,7 @@ class MovieDatasourceImpl implements MovieDatasource {
   Future<List<MovieModel>> getTopRatedMovies() async {
     try {
       final response = await dio.get(
-        ApiConsts.topRatedMoviesUrl,
+        ApiConsts.upComingMoviesUrl,
         options: Options(headers: {"Authorization": ApiConsts.token}),
       );
       final results = response.data['results'];

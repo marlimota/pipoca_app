@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pipoca_app/presentation/bloc/popular_movie_cubit/popular_movie_cubit.dart';
+import 'package:pipoca_app/presentation/bloc/top_rated_cubit/top_rated_movie_cubit.dart';
 import 'package:pipoca_app/presentation/widgets/appbar_title.dart';
 import 'package:pipoca_app/presentation/widgets/horizontal_movie_list.dart';
 import 'package:pipoca_app/presentation/widgets/page_title.dart';
@@ -15,6 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final popularMovieCubit = PopularMovieCubit();
+  final topRatedMovieCubit = TopRatedMovieCubit();
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +30,31 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           PageTitle(title: 'Tendências'),
-          HorizontalMovieList(),
+          BlocBuilder<TopRatedMovieCubit, TopRatedMovieState>(
+            bloc: topRatedMovieCubit,
+            builder: (context, state) {
+              if (state is TopRatedMovieInitial) {
+                return Text('initial state');
+              }
+              if (state is TopRatedMovieLoading) {
+                return Text('loading state');
+              }
+              if (state is TopRatedMovieLoaded) {
+                return HorizontalMovieList(movieList: state.movies);
+              }
+              if (state is TopRatedMovieError) {
+                return Text('error state');
+              }
+              return Container();
+            },
+          ),
           PageTitle(title: 'Populares'),
           BlocBuilder<PopularMovieCubit, PopularMovieState>(
             bloc: popularMovieCubit,
             builder: (context, state) {
-              if (state is PopularMovieInitial) {}
+              if (state is PopularMovieInitial) {
+                return Text('initial state');
+              }
               if (state is PopularMovieLoading) {
                 return Text('loading state');
               }
@@ -43,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               if (state is PopularMovieError) {
                 return Text('error state');
               }
-              return Container(color: Colors.red);
+              return Container();
             },
           ),
         ],

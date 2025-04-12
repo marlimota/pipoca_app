@@ -8,3 +8,13 @@ sealed class TopRatedMovieState extends Equatable {
 }
 
 final class TopRatedMovieInitial extends TopRatedMovieState {}
+
+class TopRatedMovieLoading extends TopRatedMovieState {}
+
+class TopRatedMovieLoaded extends TopRatedMovieState {
+  const TopRatedMovieLoaded({required this.movies});
+
+  final List<MovieEntity> movies;
+}
+
+class TopRatedMovieError extends TopRatedMovieState {}
