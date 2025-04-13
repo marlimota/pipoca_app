@@ -9,13 +9,18 @@ class VerticalMovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView.count(
-        crossAxisCount: 2,
-        scrollDirection: Axis.vertical,
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-        children: movieList.map((e) => MovieCard(movie: e)).toList(),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 0.7,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        itemCount: movieList.length,
+        itemBuilder: (context, index) {
+          return MovieCard(movie: movieList[index]);
+        },
       ),
     );
   }

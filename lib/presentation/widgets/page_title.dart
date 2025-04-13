@@ -11,7 +11,7 @@ class PageTitle extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          color: const Color.fromARGB(232, 255, 255, 255),
+          color: const Color.fromARGB(209, 255, 255, 255),
           fontSize: 22,
           fontFamily: 'Nexa',
           letterSpacing: 1.5,

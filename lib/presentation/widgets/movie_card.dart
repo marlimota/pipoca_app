@@ -9,11 +9,13 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 210,
+      width: 180,
       decoration: BoxDecoration(
         color: Colors.amber[400],
         image: DecorationImage(
           image: NetworkImage(movie.posterPath),
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.cover,
           alignment: Alignment.topCenter,
         ),
         borderRadius: BorderRadius.circular(15),
@@ -23,25 +25,6 @@ class MovieCard extends StatelessWidget {
             spreadRadius: 1.5,
           ),
         ],
-      ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Text(
-          movie.title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-            letterSpacing: 0.5,
-            shadows: [
-              Shadow(
-                blurRadius: 16.0,
-                color: Colors.black,
-                offset: Offset(1.0, 1.0),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

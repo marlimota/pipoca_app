@@ -9,13 +9,16 @@ class HorizontalMovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView.count(
-        crossAxisCount: 1,
+      child: ListView.builder(
+        itemCount: movieList.length,
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-        children: movieList.map((e) => MovieCard(movie: e)).toList(),
+        padding: EdgeInsets.symmetric(horizontal: 14),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: MovieCard(movie: movieList[index]),
+          );
+        },
       ),
     );
   }
