@@ -9,7 +9,6 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210,
       width: 180,
       decoration: BoxDecoration(
         color: Colors.amber[400],
@@ -20,9 +19,47 @@ class MovieCard extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(120, 174, 174, 173),
-            spreadRadius: 1.5,
+          BoxShadow(color: Color.fromARGB(71, 56, 56, 56), spreadRadius: 2),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Icon(
+                Icons.favorite,
+                color: Color.fromARGB(194, 255, 255, 229),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(180, 46, 46, 43),
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.amber, width: 2.5),
+                ),
+                child: Center(
+                  child: Text(
+                    movie.voteAverage.toStringAsFixed(1),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
