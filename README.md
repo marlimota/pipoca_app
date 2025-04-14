@@ -1,16 +1,14 @@
-# pipoca_app
+# 🎬**Pipoca Filmes**🎬
+## **Preview**
+<table>
+  <tr>
+    <td> <img src= "https://i.imgur.com/4CfuEIY.png" height= "250"/> </td>
+  </tr>
+</table>
 
-A new Flutter project.
+- Build using Flutter.
+- Movie application that uses the tmdb api.
+- Best programming practices were used, such as solid, clean architecture, state management with cubit/bloc and dependency injection using Getit.
+- In progress 
+#### Developed with 💜 by Marli Mota
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
